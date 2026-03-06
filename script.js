@@ -80,3 +80,22 @@ let interval = setInterval(firework, 700);
 setTimeout(() => {
   clearInterval(interval);
 }, 15000);
+
+function openMessage() {
+  // 1. Мәтінді көрсету
+  const message = document.getElementById('msg');
+  message.classList.add('show');
+
+  // 2. Музыканы қосу
+  const music = document.getElementById('myMusic');
+
+  // Музыканы басынан бастап ойнату және қателіктерді тексеру
+  music
+    .play()
+    .then(() => {
+      console.log('Музыка сәтті қосылды!');
+    })
+    .catch((error) => {
+      console.log('Музыканы қосуға рұқсат берілмеді:', error);
+    });
+}
